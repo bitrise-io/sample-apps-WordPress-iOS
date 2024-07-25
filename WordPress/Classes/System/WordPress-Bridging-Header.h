@@ -105,6 +105,4 @@
 #import "WPLogger.h"
 #import "WPException.h"
 
-#import "WPAddPostCategoryViewController.h"
-
 FOUNDATION_EXTERN void SetCocoaLumberjackObjCLogLevel(NSUInteger ddLogLevelRawValue);
