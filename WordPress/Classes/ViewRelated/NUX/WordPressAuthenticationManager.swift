@@ -327,14 +327,17 @@ extension WordPressAuthenticationManager: WordPressAuthenticatorDelegate {
             return
         }
 
-        let sites = (try? BlogQuery().blogs(in: mainContext)) ?? []
+        let account = try? WPAccount.lookupDefaultWordPressComAccount(in: mainContext)
+        wpAssert(account != nil)
+
+        let sites = account?.blogs ?? []
 
         guard var selectedBlog = sites.first else {
             self.presentPostSignUpInterstitial(in: navigationController, onDismiss: onDismiss)
             return
         }
 
-        if let primarySiteID = (try? WPAccount.lookupDefaultWordPressComAccount(in: mainContext))?.primaryBlogID,
+        if let primarySiteID = account?.primaryBlogID,
            let site = sites.first(where: { $0.dotComID == primarySiteID }) {
             selectedBlog = site
         }
@@ -475,11 +478,6 @@ private extension WordPressAuthenticationManager {
         let numberOfBlogs = (try? WPAccount.lookupDefaultWordPressComAccount(in: context))?.blogs?.count ?? 0
 
         return numberOfBlogs
-    }
-
-    private func firstBlog() -> Blog? {
-        let context = ContextManager.sharedInstance().mainContext
-        return try? WPAccount.lookupDefaultWordPressComAccount(in: context)?.blogs?.first
     }
 }
 
