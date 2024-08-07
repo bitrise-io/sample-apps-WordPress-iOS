@@ -122,24 +122,22 @@ final class MySiteViewController: UIViewController, UIScrollViewDelegate, NoSite
     ///
     private var noSitesScrollView: UIScrollView?
     private var noSitesRefreshControl: UIRefreshControl?
+
     private lazy var noSitesViewController: UIHostingController = {
+        let addSiteViewModel = AddSiteAlertViewModel { [weak self] in
+            switch $0 {
+            case .dotCom:
+                self?.launchSiteCreationFromNoSites()
+                RootViewCoordinator.shared.isSiteCreationActive = true
+            case .selfHosted:
+                self?.launchLoginForSelfHostedSite()
+            }
+        }
         let noSitesViewModel = NoSitesViewModel(
             appUIType: JetpackFeaturesRemovalCoordinator.currentAppUIType,
-            account: viewModel.defaultAccount
+            account: self.viewModel.defaultAccount
         )
-        let configuration = AddNewSiteConfiguration(
-            canCreateWPComSite: viewModel.defaultAccount != nil,
-            canAddSelfHostedSite: AppConfiguration.showAddSelfHostedSiteButton,
-            launchSiteCreation: {
-                [weak self] in self?.launchSiteCreationFromNoSites()
-                RootViewCoordinator.shared.isSiteCreationActive = true
-            },
-            launchLoginForSelfHostedSite: { [weak self] in self?.launchLoginForSelfHostedSite() }
-        )
-        let noSiteView = NoSitesView(
-            viewModel: noSitesViewModel,
-            addNewSiteConfiguration: configuration
-        )
+        let noSiteView = NoSitesView(addSiteViewModel: addSiteViewModel, viewModel: noSitesViewModel)
         return UIHostingController(rootView: noSiteView)
     }()
 
@@ -153,7 +151,6 @@ final class MySiteViewController: UIViewController, UIScrollViewDelegate, NoSite
         setupView()
         setupConstraints()
         setupNavigationItem()
-        subscribeToPostSignupNotifications()
         subscribeToModelChanges()
         subscribeToPostPublished()
         startObservingQuickStart()
@@ -212,11 +209,6 @@ final class MySiteViewController: UIViewController, UIScrollViewDelegate, NoSite
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         super.willTransition(to: newCollection, with: coordinator)
         createButtonCoordinator?.presentingTraitCollectionWillChange(traitCollection, newTraitCollection: newCollection)
-    }
-
-    private func subscribeToPostSignupNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(launchSiteCreationFromNotification), name: .createSite, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(showAddSelfHostedSite), name: .addSelfHosted, object: nil)
     }
 
     private func subscribeToPostPublished() {
@@ -551,7 +543,8 @@ final class MySiteViewController: UIViewController, UIScrollViewDelegate, NoSite
 
     @objc
     func presentInterfaceForAddingNewSite() {
-        noSitesViewController.rootView.handleAddNewSiteButtonTapped()
+        wpAssertionFailure("invalid_state")
+//        noSitesViewController.rootView.handleAddNewSiteButtonTapped()
     }
 
     private func launchSiteCreationFromNoSites() {
