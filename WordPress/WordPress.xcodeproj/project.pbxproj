@@ -28287,7 +28287,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressDraftAction;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.WordPressDraftAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "03b7c1c5-4846-447e-a75c-4005a8e52a68";
 				PROVISIONING_PROFILE_SPECIFIER = "WordPress Draft Action Development";
@@ -28341,7 +28341,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressDraftAction;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.WordPressDraftAction;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3dd880ae-7e5a-4858-ab4e-6e482e856041";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore org.wordpress.WordPressDraftAction";
@@ -29557,7 +29557,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShare;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.WordPressShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "WordPress Share Extension Development";
 				SKIP_INSTALL = YES;
@@ -29624,7 +29624,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShare;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.WordPressShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore org.wordpress.WordPressShare";
 				SKIP_INSTALL = YES;
@@ -29692,7 +29692,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D INTERNAL_BUILD";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.internal.WordPressShare;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.WordPressShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse org.wordpress.internal.WordPressShare";
 				SKIP_INSTALL = YES;
@@ -29760,7 +29760,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -D ALPHA_BUILD -D INTERNAL_BUILD";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.alpha.WordPressShare;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.alpha.WordPressShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse org.wordpress.alpha.WordPressShare";
 				SKIP_INSTALL = YES;

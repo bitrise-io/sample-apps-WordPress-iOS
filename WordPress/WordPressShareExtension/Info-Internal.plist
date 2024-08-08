@@ -30,10 +30,8 @@
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
-			<key>NSExtensionJavaScriptPreprocessingFile</key>
-			<string>WordPressShare</string>
 			<key>NSExtensionActivationRule</key>
-            <string>
+			<string>
                 SUBQUERY(
                 extensionItems,
                 $extensionItem,
@@ -69,8 +67,10 @@
                 ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.find-login-action"
                 || ANY $attachment.registeredTypeIdentifiers UTI-CONFORMS-TO "org.appextension.save-login-action"
                 ).@count == 0
-                ).@count >= 1
+                ).@count &gt;= 1
             </string>
+			<key>NSExtensionJavaScriptPreprocessingFile</key>
+			<string>WordPressShare</string>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>
