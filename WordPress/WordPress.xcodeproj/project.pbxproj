@@ -27404,7 +27404,7 @@
 					"-l\"z\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress;
 				PRODUCT_NAME = WordPress;
 				PROVISIONING_PROFILE_SPECIFIER = "WordPress Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Classes/System/WordPress-Bridging-Header.h";
@@ -27469,7 +27469,7 @@
 					"-l\"sqlite3.0\"",
 					"-l\"z\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.org.wordpress;
 				PRODUCT_NAME = WordPress;
 				PROVISIONING_PROFILE_SPECIFIER = "match AppStore org.wordpress";
 				SWIFT_OBJC_BRIDGING_HEADER = "Classes/System/WordPress-Bridging-Header.h";
@@ -29443,7 +29443,7 @@
 					"-l\"z\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D ALPHA_BUILD -D INTERNAL_BUILD";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.alpha;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress.alpha;
 				PRODUCT_NAME = WordPress;
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse org.wordpress.alpha";
 				SWIFT_OBJC_BRIDGING_HEADER = "Classes/System/WordPress-Bridging-Header.h";
@@ -29880,7 +29880,7 @@
 					"-l\"z\"",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D INTERNAL_BUILD";
-				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.internal;
+				PRODUCT_BUNDLE_IDENTIFIER = io.bitrise.bitfall.samples.org.wordpress;
 				PRODUCT_NAME = WordPress;
 				PROVISIONING_PROFILE_SPECIFIER = "match InHouse org.wordpress.internal";
 				SWIFT_OBJC_BRIDGING_HEADER = "Classes/System/WordPress-Bridging-Header.h";
