@@ -13,9 +13,5 @@
 		<string>applinks:apps.wordpress.com</string>
 		<string>applinks:links.wp.a8cmail.com</string>
 	</array>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>99KV9Z6BKV.org.wordpress.internal</string>
-	</array>
 </dict>
 </plist>
